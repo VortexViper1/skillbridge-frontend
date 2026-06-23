@@ -1,0 +1,154 @@
+.home{
+    min-height:100vh;
+    background:#030712;
+    color:white;
+    overflow:hidden;
+    position:relative;
+}
+
+.hero-section{
+    position:relative;
+    z-index:10;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.hero-title{
+    font-size:5rem;
+    font-weight:800;
+    line-height:1.1;
+    max-width:1000px;
+}
+
+.hero-gradient{
+    background:linear-gradient(
+        90deg,
+        #60a5fa,
+        #a855f7,
+        #06b6d4
+    );
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.hero-subtitle{
+    margin-top:25px;
+    font-size:1.2rem;
+    color:#cbd5e1;
+    max-width:800px;
+}
+
+.hero-buttons{
+    margin-top:40px;
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.primary-btn{
+    padding:15px 35px;
+    border-radius:15px;
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #7c3aed
+    );
+    color:white;
+    font-weight:600;
+    transition:.4s;
+}
+
+.primary-btn:hover{
+    transform:translateY(-5px);
+}
+
+.secondary-btn{
+    padding:15px 35px;
+    border-radius:15px;
+    border:1px solid rgba(255,255,255,.15);
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(20px);
+    color:white;
+    transition:.4s;
+}
+
+.secondary-btn:hover{
+    transform:translateY(-5px);
+}
+
+.features{
+    position:relative;
+    z-index:10;
+    padding:80px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+.feature-box{
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:25px;
+    padding:35px;
+    transition:.4s ease;
+}
+
+.feature-box:hover{
+    transform:translateY(-10px);
+}
+
+.glow{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(140px);
+    animation:float 12s infinite ease-in-out;
+}
+
+.g1{
+    width:400px;
+    height:400px;
+    background:#2563eb;
+    top:-100px;
+    left:-100px;
+}
+
+.g2{
+    width:350px;
+    height:350px;
+    background:#9333ea;
+    right:-100px;
+    top:150px;
+}
+
+.g3{
+    width:350px;
+    height:350px;
+    background:#06b6d4;
+    bottom:-100px;
+    left:35%;
+}
+
+@keyframes float{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-40px);}
+    100%{transform:translateY(0);}
+}
+
+@media(max-width:900px){
+
+    .hero-title{
+        font-size:3rem;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+        padding:40px;
+    }
+
+}
