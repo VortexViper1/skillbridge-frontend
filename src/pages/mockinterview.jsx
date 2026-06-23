@@ -108,7 +108,7 @@ function MockInterview() {
 
                   <div className="answer-box">
 
-                    {item.answer || "Fuck You!, go learn by ur self, this is the project done by you NOT AI!"}
+                    {item.answer || "This is the project done by you NOT AI!"}
 
                   </div>
 
