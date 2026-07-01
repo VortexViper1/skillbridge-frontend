@@ -6,10 +6,19 @@ function Home() {
 
   const [user, setUser] = useState(null);
 
-  useEffect(() => {
-    const stored = localStorage.getItem("user");
-    if (stored) setUser(JSON.parse(stored));
-  }, []);
+ useEffect(() => {
+  const token = localStorage.getItem("token");
+  const storedUser = localStorage.getItem("user");
+
+  if (token && storedUser) {
+    try {
+      setUser(JSON.parse(storedUser));
+    } catch {
+      localStorage.removeItem("user");
+      localStorage.removeItem("token");
+    }
+  }
+}, []);
 
   return (
 
