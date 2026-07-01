@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export default axios.create({
-  baseURL: "http://localhost:8000"
+  baseURL: "https://skillbridge-backend-production-5e0c.up.railway.app/"
 });
