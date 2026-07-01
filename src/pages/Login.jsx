@@ -7,13 +7,6 @@ function Login() {
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const user = localStorage.getItem("user");
-    if (user) {
-      navigate("/dashboard");
-    }
-  }, [navigate]);
-
   const [formData, setFormData] = useState({
     email: "",
     password: ""
