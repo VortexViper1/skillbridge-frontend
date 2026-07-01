@@ -82,11 +82,27 @@ function Login() {
           <form className="auth-form" onSubmit={handleSubmit}>
             <div className="auth-field">
               <label className="auth-label" htmlFor="email">Email address</label>
-              <input className="auth-input" id="email" type="email" name="email" placeholder="you@example.com" onChange={handleChange} />
+             <input
+  className="auth-input"
+  id="email"
+  type="email"
+  name="email"
+  placeholder="you@example.com"
+  onChange={handleChange}
+  required
+/>
             </div>
             <div className="auth-field">
               <label className="auth-label" htmlFor="password">Password</label>
-              <input className="auth-input" id="password" type="password" name="password" placeholder="••••••••" onChange={handleChange} />
+              <input
+  className="auth-input"
+  id="password"
+  type="password"
+  name="password"
+  placeholder="••••••••"
+  onChange={handleChange}
+  required
+/>
             </div>
             <div className="auth-forgot">
               <a href="#">Forgot password?</a>
