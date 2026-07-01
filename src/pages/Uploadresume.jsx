@@ -198,27 +198,6 @@ localStorage.setItem(
               </div>
             </div>
 
-            {/* Job Match Engine */}
-            {result.job_matches?.length > 0 && (
-              <div className="ur-card ur-wide">
-                <p className="ur-card-label">Job Match Engine</p>
-                <div className="ur-job-list">
-                  {result.job_matches.map((job, i) => (
-                    <div key={i} className="ur-job-row">
-                      <span className="ur-job-role">{job.role}</span>
-                      <div className="ur-progress">
-                        <div
-                          className="ur-progress-bar"
-                          style={{ width: `${job.match_percentage}%` }}
-                        />
-                      </div>
-                      <span className="ur-job-pct">{job.match_percentage}%</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-
             {/* Grid cards */}
             <div className="ur-grid">
 
