@@ -1,155 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap');
+
+/* ── Page shell ──────────────────────────────────────────────── */
+
 .mock-page {
-
   min-height: 100vh;
-
-  background:
-  linear-gradient(
-    135deg,
-    #0f172a,
-    #1e293b,
-    #0f172a
-  );
-
-  padding-top: 120px;
-
+  background: #080c14;
   color: white;
-
+  font-family: 'Inter', sans-serif;
+  position: relative;
   overflow-x: hidden;
+  padding-top: 73px;
 }
 
+.mock-grid-bg {
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.026) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.026) 1px, transparent 1px);
+  background-size: 72px 72px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.mock-glow {
+  position: fixed;
+  width: 900px;
+  height: 500px;
+  top: -180px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse 60% 60% at 50% 0%, rgba(37,99,235,0.11) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Container ───────────────────────────────────────────────── */
+
 .mock-container {
-
+  position: relative;
+  z-index: 10;
   width: 90%;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 64px 0 100px;
+}
 
-  max-width: 1200px;
+/* ── Header ──────────────────────────────────────────────────── */
 
-  margin: auto;
+.mock-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.mock-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 14px;
+  border: 1px solid rgba(37,99,235,0.3);
+  background: rgba(37,99,235,0.08);
+  border-radius: 100px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #93c5fd;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+
+.mock-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #3b82f6;
+  animation: dot-pulse 2s infinite;
+}
+
+@keyframes dot-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
 }
 
 .mock-title {
-
-  text-align: center;
-
-  font-size: 3rem;
-
-  font-weight: 700;
-
-  margin-bottom: 10px;
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  margin: 0 0 20px;
 }
 
 .mock-subtitle {
-
-  text-align: center;
-
-  opacity: 0.8;
-
-  margin-bottom: 40px;
-}
-
-.generate-btn {
-
-  display: block;
-
-  margin: auto;
-
-  border: none;
-
-  padding: 15px 35px;
-
-  border-radius: 14px;
-
-  cursor: pointer;
-
-  font-size: 1rem;
-
-  transition: 0.3s;
-}
-
-.generate-btn:hover {
-
-  transform: translateY(-3px);
-}
-
-.questions-grid {
-
-  margin-top: 50px;
-
-  display: grid;
-
-  gap: 25px;
-}
-
-.question-card {
-
-  background:
-  rgba(255,255,255,0.06);
-
-  backdrop-filter: blur(15px);
-
-  border-radius: 20px;
-
-  padding: 25px;
-
-  border: 1px solid rgba(255,255,255,0.08);
-
-  transition: 0.3s;
-}
-
-.question-card:hover {
-
-  transform: translateY(-5px);
-}
-
-.question-card h3 {
-
-  margin-bottom: 20px;
-
-  line-height: 1.6;
-}
-
-.answer-btn {
-
-  border: none;
-
-  padding: 10px 20px;
-
-  border-radius: 10px;
-
-  cursor: pointer;
-
-  transition: 0.3s;
-}
-
-.answer-btn:hover {
-
-  transform: scale(1.05);
-}
-
-.answer-box {
-
-  margin-top: 20px;
-
-  background:
-  rgba(255,255,255,0.05);
-
-  padding: 18px;
-
-  border-radius: 12px;
-
+  font-size: 1.0625rem;
+  color: rgba(255,255,255,0.38);
   line-height: 1.7;
-
-  animation: fadeIn 0.3s ease;
+  margin: 0;
 }
 
-@keyframes fadeIn {
+/* ── Start state ─────────────────────────────────────────────── */
 
-  from {
-    opacity: 0;
-    transform: translateY(10px);
+.mock-start {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 80px 40px;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 24px;
+  background: rgba(255,255,255,0.02);
+  text-align: center;
+}
+
+.mock-start-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  background: rgba(37,99,235,0.1);
+  border: 1px solid rgba(37,99,235,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mock-start-text {
+  font-size: 0.9375rem;
+  color: rgba(255,255,255,0.35);
+  line-height: 1.75;
+  margin: 0;
+  max-width: 400px;
+}
+
+/* ── Buttons ─────────────────────────────────────────────────── */
+
+.mock-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 11px 28px;
+  background: white;
+  color: #080c14;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  border-radius: 9px;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.mock-btn:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.mock-btn:active {
+  transform: translateY(0);
+}
+
+.mock-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 20px;
+  background: transparent;
+  color: rgba(255,255,255,0.55);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.1);
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.mock-btn-outline:hover {
+  color: rgba(255,255,255,0.85);
+  border-color: rgba(255,255,255,0.2);
+}
+
+/* ── Loading ─────────────────────────────────────────────────── */
+
+.mock-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 80px 0;
+  color: rgba(255,255,255,0.35);
+  font-size: 0.9rem;
+}
+
+.mock-loading-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.mock-loading-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2563eb;
+  animation: bounce 1.2s ease-in-out infinite;
+}
+
+.mock-loading-dots span:nth-child(2) { animation-delay: 0.2s; }
+.mock-loading-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes bounce {
+  0%, 80%, 100% { transform: translateY(0); opacity: 0.4; }
+  40%           { transform: translateY(-10px); opacity: 1; }
+}
+
+/* ── Results header ──────────────────────────────────────────── */
+
+.mock-results-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.mock-results-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.22);
+  margin: 0;
+}
+
+/* ── Questions list ──────────────────────────────────────────── */
+
+.mock-questions {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.mock-question-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 28px 32px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.05);
+  background: rgba(255,255,255,0.02);
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  cursor: default;
+}
+
+.mock-question-item:hover {
+  background: rgba(255,255,255,0.04);
+  border-color: rgba(255,255,255,0.08);
+  transform: translateX(4px);
+}
+
+.mock-q-number {
+  font-family: 'Instrument Serif', serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: rgba(147,197,253,0.3);
+  line-height: 1;
+  flex-shrink: 0;
+  padding-top: 3px;
+  min-width: 32px;
+}
+
+.mock-q-text {
+  font-size: 1.0625rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.82);
+  line-height: 1.65;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+/* ── Footer action ───────────────────────────────────────────── */
+
+.mock-footer-action {
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  .mock-container {
+    padding: 48px 0 80px;
   }
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  .mock-question-item {
+    padding: 22px 20px;
+    gap: 16px;
+  }
+
+  .mock-start {
+    padding: 56px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mock-q-number {
+    font-size: 1.2rem;
+  }
+
+  .mock-q-text {
+    font-size: 0.9375rem;
   }
 }
